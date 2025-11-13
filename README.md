@@ -1,141 +1,96 @@
-# TP Final - Versioning avec Git et GitHub
-
-*Édition 2025*
-
-Enseignante et correctrice : Sarah Schlegel ([@SarahSch19](https://github.com/esgi-na-sa/TP-Git-2025))
-
-## Modalités
-
-Durée : 1h30
-
-Ce TP est à faire par groupes de 3. Dans les rares cas où vous ne seriez que 2, l'intégralité du TP est à réaliser, mais vous pouvez vous répartir les tâches de l'élève n°3.
-
-## Livrables
-
-Le seul livrable attendu est **le dossier de travail complet (repository), à rendre sur MyGes** uniquement au format .zip. Il doit absolument contenir :
-
-- le dossier .git
-- le dossier `screenshots`
-- les différents fichiers à créer durant le tp (`tp.md`, `reflexion.md`)
-
-## Ressources autorisées
-
-Vous avez accès à toutes les ressources fournies en cours (supports PDF, cheat sheet, etc.). Vous n'avez **pas** l'autorisation d'utiliser des LLMS et IAs génératives (ChatGPT, Copilot, etc.) pour trouver les commandes à utiliser. Vous n'avez également pas le droit de communiquer avec les étudiants des autres groupes.
-
-# Instructions
-
-## Règles de nomenclature
-
-### Branches
-
-Afin d'identifier votre travail, vos **branches** doivent respecter la nomenclature suivante : `branch/<nom-de-l'élève>`. 
-
-Exemples :
-
-- `branch/Jane-Doe`
-- `branch/Louis-Petit`
-
-### Commits
-
-Afin de structurer vos commits, vous devez respecter la nomenclature de commits suivante :
-
-- `feat/<nom-de-l'élève>: <description de la modification>` pour les modifications principales avec nom-de-l'élève étant l'élève qui a fait la modification
-- `merge/<nom-de-l'élève>: merge de <source> vers <destination>` pour les merge, avec `<source>` étant le nom de la branche source, et `<destination>` celui de la branche vers laquelle le merge est effectué
-
-Si vous ne souhaitez pas mettre vos noms complets dans les commits et les noms de branches, vous pouvez utiliser seulement votre prénom (s'il n'y a pas de doppelganger dans votre groupe) ou votre pseudo GitHub. Vous devrez alors rajouter dans le livrable de rendu les associations entre vos pseudos GitHub et vos noms réels.
-
-## **Phase 1 – Démarrage du projet**
-
-1. Un élève du groupe fait un fork du repository https://github.com/esgi-na-sa/TP-Git-2025. Le nom du repo doit contenir votre classe et le numéro de votre groupe, par exemple `TP-Git-2025-2a1-G1`.
-2. Il ajoute les deux autres ainsi que l'enseignante (`SarahSch19`) en tant que collaborateurs
-3. Chaque étudiant **clone** le repository sur sa machine.
-4. Chacun crée sa **branche personnelle** à partir du commit initial (`main` ou `master`).
-
-À partir de cette étape, le travail de chaque élève diverge.
-
-## Phase 2 – Modifications initiales
-
-Toutes les modifications doivent être commitées et pushées sur leurs branches respectives.
-
-### Élève 1 :
-
-- Crée un fichier [`tp.md`](http://tp.md) avec un bref contenu texte (3-4 lignes, peuvent être copiées depuis le `README.md`.
-
-### Élève 2 :
-
-- Crée également un fichier [`tp.md`](http://tp.md) avec un contenu **différent** (idem, quelques lignes de texte).
-
-### Élève 3 :
-
-- Modifie le `README.md` pour :
-    - Supprimer son contenu initial
-    - Lister les noms des trois contributeurs (et leurs pseudos github si nécessaire).
-    - Ajouter l’URL en remote du repository forké.
-    
-    ```jsx
-    Repository : https://github.com/jean-durand/TP-Git-2025-2a1-G1
-    Élève 1 = Jane Doe
-    Élève 2 = Louis Petit
-    Élève 3 = Jean Durand
-    ```
-    
-
-> S'il n'y a pas de troisième élève, ces tâches sont à répartir entre les deux élèves présents.
-> 
-
-## Phase 3 – Collaboration et gestion des conflits
-
-### Étape 1 : Fusions croisées
-
-- **Élève 1** : merge la branche de l’Élève 2 **sans** fast-forward
-- **Élève 2** : merge la branche de l’Élève 3 **avec** fast-forward
-- **Élève 3** : rebase sa branche sur celles de l’Élève 1 puis de l’Élève 2.
-
-> Si un conflit apparaît, il doit être résolu et mentionné dans la description du commit.
-
-## Phase 4 – Manipulations avancées sur l’historique
-
-1. **Élève 1 : Créer un HEAD détaché :**
-    - Créer un **head détaché** à partir du commit `36daa99 19/10/2021 grid and cells setup`
-    - Ajouter du contenu dans un fichier `detached.md`et commit.
-    - Faire une capture d’écran du terminal en mode head détaché et la placer dans un dossier `/screenshots/`.
-2. **Élève 2 : Faire un revert :**
-    - Revenir sur le commit de création du fichier `index.html` de l’Élève 1.
-    - Ajouter un commit `revert/<nom>` et décrire ce qui a été annulé.
-3. **Élève 3 : Faire un reset**
-    - Faire une capture d’écran de `git log --oneline --graph` **avant** le reset et la placer dans un dossier `/screenshots/`.
-    - Effectuer un **reset hard** à un commit antérieur, **avant un merge**.
-
-## Phase 5 – Pull Requests et revue de code
-
-- **Élève 3** : crée une Pull Request de sa branche vers `main`.
-- **Élève 2** : approuve la PR.
-- **Élève 1** : demande des changements.
-- **Élève 2** : répond au commentaire.
-- **Élève 1** : marque le commentaire comme résolu.
-- **Élève 3** : fusionne via **Squash & Merge**.
-
-> /!\ Les pull requests doivent être faites sur le repository forké, pas vers le repository principal.
-> 
-
-## Phase 6 – Réflexion et questions techniques (écrites)
-
-Chaque étudiant doit répondre dans un fichier `reflexion.md` :
-
 1. **Expliquez, en quelques phrases, la structure actuelle du projet Git après toutes les opérations (branches, merges, commits).**
     - Vous pouvez illustrer avec `git log --graph`.
+    On as crée chaqu'un une branch avec notre nom et moi j'ai crée une autre branch avec un head détaché nommé detached.
+    il y a eu une erreur de conflit lors du merge avec la branch Im-Savannah aprés une modiff du fichier et un add puis un commit tout est rentré dans l'ordre.
+|\  Merge: 3846527 97cc768
+| | Author: Azbot-git <l.cohen@myskolae.fr>
+| | Date:   Thu Nov 13 16:26:21 2025 +0100
+| |
+| |     feat/<Cohen-Lenny>:<Modification du fichier aprés le merge avec la branch Im-Savannah aprés le confit du au meme nom de fichier conservation des deux texte (une fusion)>
+| |
+| * commit 97cc7688133620eb09d66ae2d231102132e15533
+| | Author: sav94paris <im.savannah.pro@gmail.com>
+| | Date:   Thu Nov 13 15:49:53 2025 +0100
+| |
+| |     ajout de mon ficher tp.md(sav)
+| |
+* | commit 3846527f9ca80d41ed57c1adf3ac219420cf19ff
+|/  Author: Azbot-git <l.cohen@myskolae.fr>
+|   Date:   Thu Nov 13 15:54:19 2025 +0100
+|
+|       feat/<Lenny-Cohen>: <création et ajout du fichier tp.md>
+|
+* commit 58b17f6963231234186910ca7cde1dcf772ed3cc (master)
+| Author: Sarah Schlegel <sschlegel@myges.fr>
+| Date:   Wed Nov 12 22:01:27 2025 +0100
+|
+|     Instructions TP Final
+|
+*   commit 767f380a5bb96234debe23e6eb9cc6e3ccda2e43
+|\  Merge: a8be53b e2dd662
+| | Author: Sarah Schlegel <sschlegel@myges.fr>
+| | Date:   Wed May 25 18:39:15 2022 +0200
+| |
+| |     Merge pull request #1 from SarahSch19/develop
+| |
+| |     Develop
+| |
+| * commit e2dd662105fc79019d30214aafda841ba5d612d8
+| | Author: Sarah <sschlegel@myges.fr>
+| | Date:   Wed Oct 27 03:54:18 2021 +0900
+| |
+| |     init empty grid
+| |
+| * commit 6640250a07f2a8bdd4546ac8ef730dcd539f77f5
+| | Author: Sarah <sschlegel@myges.fr>
+| | Date:   Wed Oct 27 03:49:07 2021 +0900
+| |
+| |     next round done
+| |
+| * commit 8d0152e8af5ac897bce88ac64927e026eea6659a
+| | Author: Sarah <sschlegel@myges.fr>
+| | Date:   Wed Oct 27 03:00:50 2021 +0900
+| |
+| |     comment previous code
+| |
+| * commit 912ff4b94c56d36126c294bd2560830914f753f1
+| | Author: Sarah <sschlegel@myges.fr>
+| | Date:   Tue Oct 19 04:53:00 2021 +0900
+| |
+| |     comments for 19.10.2021
+| |
+| * commit 36daa99b64747d67a164d634fd775353ab176ae1
+| | Author: Sarah <sschlegel@myges.fr>
+| | Date:   Tue Oct 19 04:42:18 2021 +0900
+| |
+| |     19/10/2021 grid and cells setup
+| |
+| * commit c6b95deaf1916b5a71f51ebd06b1f558158ee379
+| | Author: Sarah <sschlegel@myges.fr>
+| | Date:   Tue Oct 19 02:28:21 2021 +0900
+| |
+| |     develop setup
+| |
+| * commit 23f5d1dd678001b6039d09dfc8622e03eeed3ee0
+|/  Author: Sarah <sschlegel@myges.fr>
+|   Date:   Mon Oct 18 18:33:52 2021 +0900
+|
+|       update gitignore
+|
+* commit a8be53b1ef762a800bffd9124949a32acd9479a2
+  Author: SarahSch19 <grepo.sarah19@gmail.com>
+  Date:   Mon Oct 18 16:14:54 2021 +0900
+
+      Initial commit
+
+
+
 2. **Quelle est la différence entre `git fetch` et `git pull` ?**
-    - Donnez un exemple concret où l’un est préférable à l’autre.
+    - git fetch récupéré toute les mise a jours du dépot distant san modifier la branche local.
+    - git pull permet de récupéré fair un git fetch  suivie d'uin git merge.
 3. **Expliquez la différence entre `git reset` et `git revert`.**
-    - Décrivez une situation où utiliser l’un serait risqué.
+git reset modifie l’historique local en se déplaçant à un commit précédent.
+git revert, au contraire, crée un nouveau commit qui annule un commit passé, sans changer l’historique.
 
-## Bonus (optionnel, +1 point)
-
-Configurez une **règle de protection** sur la branche principale :
-
-- Interdire le push direct
-- Obliger au moins une approbation avant merge
-
-Ajoutez une capture d’écran de la configuration GitHub dans le dossier `/screenshots/`.
-
-# *À vos terminaux !*
+Si plusieurs personnes travaillent sur le même dépôt, utiliser git reset --hard peut réécrire l’historique partagé et casser le travail des autres.
+Dans ce cas, il vaut toujours mieux utiliser git revert car il n’efface aucun commit, il annule seulement les changements.
